@@ -1,0 +1,35 @@
+I calculates the minimum start and end points that is the boundary of the rectangle and the interated through each row accordingly and calculated the answer.
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+    int n,m;
+    cin>>n>>m;
+    vector<vector<char>> b;
+    for (int i = 0; i < n; i++) {
+    string row;
+    cin >> row;  // reads exactly m characters per row
+    vector<char> vec(row.begin(), row.end());
+    b.push_back(vec);
+}
+
+    int start=m,end=0;
+    int depth=n;
+    int bdepth=0;
+    for(int i=0;i<n;i++){
+        for(int j=0;j<m;j++){
+            if(b[i][j]=='*'){
+                depth=min(depth,i);
+                start=min(start,j);
+                end=max(end,j);
+                bdepth=max(bdepth,i);
+            }
+        }
+    }
+    for(int i=depth;i<=bdepth;i++){
+        for(int j=start;j<=end;j++){
+            cout<<b[i][j];
+        }
+        cout<<endl;
+    }
+    return 0;
+}
