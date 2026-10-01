@@ -1,0 +1,20 @@
+I first calculated the solution through iteration where if the integer was a power of 2 then subtract else add but it gave TLE so I first calculated the sum of n intgers then subatracted the double of power 2 one by one.
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+    int k=0;
+    int t;
+    cin>>t;
+    for(int i=0;i<t;i++){
+        int n;
+        cin>>n;
+        long long sum = (1LL * n * (n + 1)) / 2;
+        int start=1;
+        while(start<=n){
+            sum-=2*start;
+            start*=2;
+        }
+        cout<<sum<<endl;
+    }
+    return 0;
+}
