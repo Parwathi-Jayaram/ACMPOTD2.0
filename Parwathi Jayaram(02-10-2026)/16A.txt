@@ -1,0 +1,33 @@
+For this question I first converted each row into a set and then checked the size of the set to confirm that it has only 1 unique elements.
+Then I checked that the first element of adjacent rows should be uniwue to fulfill the second condition.
+
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+    int n,m;
+    cin>>n>>m;
+    vector<string> flag;
+
+for(int i=0;i<n;i++){
+    string a;
+    cin >> a;
+    flag.push_back(a);
+}
+    int prev=-1;
+    string op="YES";
+    for(int i=0;i<n;i++){
+        set<int> s(flag[i].begin(),flag[i].end());
+        if(s.size()!=1){
+            op="NO";
+            break;
+        }else{
+        if(flag[i][0]==prev){
+            op="NO";
+            break;
+        }
+        prev=flag[i][0];
+        }
+    }
+    cout<<op<<endl;
+    return 0;
+}
