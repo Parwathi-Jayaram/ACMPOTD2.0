@@ -1,0 +1,25 @@
+So for this question I calculated the first and second minimum element while taking the input.
+The second minimum was the required output.
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+    int min1=INT_MAX,min2=INT_MAX;
+    int n;
+    cin>>n;
+    for(int i=0;i<n;i++){
+        int a;
+        cin>>a;
+        if(a<min1){
+            min2=min1;
+            min1=a;
+        }else if(a>min1 && a<min2){
+            min2=a;
+        }
+    }
+    if(min2==INT_MAX){
+        cout<<"NO"<<endl;
+    }else{
+        cout<<min2<<endl;
+    }
+    return 0;
+}
