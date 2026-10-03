@@ -1,0 +1,24 @@
+So for this question I simply added the a value to the minutes value then I kept reducing it by 60mins till the minute value became valid.
+At the same time I also kept adding hours value by 1.
+If hours exceeded 23 I changed it to 00.
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+    string Time;
+    cin>>Time;
+    int h,m;
+    h=stoi(Time.substr(0,2));
+    m=stoi(Time.substr(3,2));
+    int a;
+    cin>>a;
+    m+=a;
+    while(m>=60){
+        m-=60;
+        h+=1;
+        if(h>=24){
+            h=00;
+        }
+    }
+    cout<<setw(2)<<setfill('0')<<h<<":"<<setw(2)<<setfill('0')<<m<<endl;
+    return 0;
+}
