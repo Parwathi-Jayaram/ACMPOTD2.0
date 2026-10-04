@@ -1,0 +1,24 @@
+So forthis question I first calulated the fixed holdiays. Every week would have 2 holidays for sure.
+Then for the remaining days I used conditions to calculate the minimum and miximum holidays possible.
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+    int n;
+    cin>>n;
+    int mini,maxi;
+    mini=(n/7)*2;
+    maxi=(n/7)*2;
+    n=n%7;
+    if(n>0){
+        if(n>5){
+            mini+=n-5;
+        }
+        if(n>=2){
+            maxi+=2;
+        }else{
+        maxi+=n;
+        }
+    }
+    cout<<mini<<" "<<maxi<<endl;
+    return 0;
+}
