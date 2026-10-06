@@ -1,0 +1,25 @@
+So for this question I actually created an array of heights then I used brute force approach to caldulate the difference.
+Since the valueof n in constarint is from 1 to 1000 so this approach would suffice.
+
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+    int n,d;
+    cin>>n>>d;
+    vector<int> vals;
+    for(int i=0;i<n;i++){
+        int a;
+        cin>>a;
+        vals.push_back(a);
+    }
+    int op=0;
+    for(int i=0;i<n;i++){
+        for(int j=i+1;j<n;j++){
+            if(abs(vals[i]-vals[j])<=d){
+                op+=2;
+            }
+        }
+    }
+    cout<<op<<endl;
+    return 0;
+}
