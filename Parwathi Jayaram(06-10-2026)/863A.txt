@@ -1,0 +1,22 @@
+So for this question I first removed the zeros at the end of the number then I checked if the remaining number is a pallindrome or not.
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+    int s;
+    cin>>s;
+    while(s%10==0){
+        s=s/10;
+    }
+    int a=s;
+    int n;
+    while(s>0){
+        n=n*10+s%10;
+        s=s/10;
+    }
+    if(a==n){
+        cout<<"YES"<<endl;
+    }else{
+        cout<<"NO"<<endl;
+    }
+    return 0;
+}
