@@ -1,0 +1,38 @@
+So for this question we can observ that the only possible answers are:
+1. The common element between both the lists 
+2. The number formed by the smallest elements of the two lists.
+So found the minimum of both as the answer.
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+    int n,m;
+    cin>>n>>m;
+    vector<int> list1;
+    vector<int> list2;
+    int min1=INT_MAX,min2=INT_MAX;
+    for(int i=0;i<n;i++){
+        int a;
+        cin>>a;
+        if(a<min1){
+            min1=a;
+        }
+        list1.push_back(a);
+    }
+    int singles=INT_MAX;
+    for(int j=0;j<m;j++){
+        int b;
+        cin>>b;
+        for(int i:list1){
+            if(i==b){
+                singles=min(singles,b);
+            }
+        }
+        if(b<min2){
+            min2=b;
+        }
+        list2.push_back(b);
+    }
+    int op=min(singles,min(min1,min2)*10+max(min1,min2));
+    cout<<op<<endl;
+    return 0;
+}
