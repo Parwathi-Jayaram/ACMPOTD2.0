@@ -1,0 +1,14 @@
+So for this question I first calculated the total cost of regular tickets.
+Then I calculated the total cost of special ticket.
+In case of special tickets there were two possibilities ased of n%m.
+We could either buy a special ticket or a regular ticket for this last group. So I calculated ll these possibilities and then found the minimum of it all.
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+    int n,m,a,b;
+    cin>>n>>m>>a>>b;
+    int regular=n*a;
+    int special=((n/m)*b)+min(((n%m)*a),b);
+    cout<<min(regular,special)<<endl;
+    return 0;
+} 
