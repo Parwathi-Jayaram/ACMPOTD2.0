@@ -1,0 +1,21 @@
+So for this question I actually kept calculating the summation by adding the i+1.
+Then I checked if the summation was equal to the n value. I kept repeating this till the summation was lesser or equal to n.
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+    int n;
+    cin>>n;
+    int start=0;
+    int i=1;
+    string op="NO";
+    while(start<=n){
+        if(start==n){
+            op="YES";
+            break;
+        }
+        start+=i;
+        i++;
+    }
+    cout<<op<<endl;
+    return 0;
+}
