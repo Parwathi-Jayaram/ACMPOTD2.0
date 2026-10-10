@@ -1,0 +1,17 @@
+So for this question I actually checked each character from the end of the string to check if the last character is vowel or a consonant.
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+    string s;
+    getline(cin, s);
+    int i=s.size()-1;
+    while(s[i]==' '||s[i]=='?'){
+        i--;
+    }
+    if(tolower(s[i])=='a' || tolower(s[i])=='e'||tolower(s[i])=='i'||tolower(s[i])=='o'||tolower(s[i])=='u'||tolower(s[i])=='y'){
+        cout<<"YES"<<endl;
+    }else{
+        cout<<"NO"<<endl;
+    }
+    return 0;
+}
