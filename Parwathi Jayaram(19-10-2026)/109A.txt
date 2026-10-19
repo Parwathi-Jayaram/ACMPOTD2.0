@@ -1,0 +1,19 @@
+So for this question I first tried reccursion where I used 4s and 7s reccursivelky and checked the sums of the numbers so formed.
+This meyhod created tle so I simply used the formula 4a+7b=number to calculate the number of 4s and 7s.
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+    int n;
+    cin >> n;
+    for (int len = 1; len <= n / 4; len++) {
+        int b = n - 4 * len;
+        if (b < 0 || b % 3 != 0) continue;
+        b /= 3;
+        int a = len - b;
+        if (a < 0 || b < 0) continue;
+        cout << string(a, '4') << string(b, '7') << endl;
+        return 0;
+    }
+    cout << -1 << endl;
+    return 0;
+}
