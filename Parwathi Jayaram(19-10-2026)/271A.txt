@@ -1,0 +1,22 @@
+So for this question I created a set iteratively where I appended each digit of the year one by one.
+If the size of set becomes 4 then I output that year.
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+    int y;
+    cin>>y;
+    while(true){
+        y++;
+        int x=y;
+        set<int> s;
+        while(x>0){
+            s.insert(x%10);
+            x=x/10;
+        }
+        if(s.size()==4){
+            cout<<y<<endl;
+            return 0;
+        }
+    }
+    return 0;
+}
