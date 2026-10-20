@@ -1,0 +1,20 @@
+So for this question I first lowered the characters then I checked if they are consonants or vowels.
+If they are consonants then I added '.' and the character.
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    // Vowels: A,E,I,O,U,Y
+    string s;
+    cin>>s;
+    string op="";
+    for(char c:s){
+        c=tolower(c);
+        if(c!='a'&& c!='e'&&c!='i'&&c!='o'&&c!='u'&&c!='y'){
+            op+='.';
+            op+=c;
+        }
+    }
+    cout<<op<<endl;
+    return 0;
+}
