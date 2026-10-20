@@ -1,0 +1,12 @@
+So for this question I simply used to toupper() function ofn the first character of the string.
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    // Write C++ code here
+    string s;
+    cin>>s;
+    s[0]=toupper(s[0]);
+    cout<<s<<endl;
+    return 0;
+}
