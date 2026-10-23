@@ -1,0 +1,24 @@
+So for this question I basically calculated the second lasrgest price and the index of largest price.
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+    int n;
+    cin>>n;
+    int winner=-1;
+    int price=0;
+    int sl=0;
+    for(int i=0;i<n;i++){
+        int a;
+        cin>>a;
+        if(a>price){
+            winner=i+1;
+            sl=price;
+            price=a;
+        }
+        if(a<price && a>sl){
+            sl=a;
+        }
+    }
+    cout<<winner<<" "<<sl<<endl;
+    return 0;
+}
