@@ -1,0 +1,28 @@
+So for this question I checked each condition by looping through the password string.
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+    string s;
+    cin>>s;
+    bool length = false, large = false, small = false, digit = false;
+    if(s.size()>=5){
+        length=true;
+    }
+    for(char c:s){
+        if(c>='a' && c<='z'){
+            small=true;
+        }
+        if(c>='A'&&c<='Z'){
+            large=true;
+        }
+        if(c>='0'&&c<='9'){
+            digit=true;
+        }
+    }
+    if(length&&large&&small&&digit){
+        cout<<"Correct"<<endl;
+    }else{
+        cout<<"Too weak"<<endl;
+    }
+    return 0;
+}
