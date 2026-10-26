@@ -1,0 +1,26 @@
+So for this question I calculated the sum of volumes of all mugs.
+I found the mug with maximum volume.
+Then I checked if the (sum-max) is lesser than volume of the empty cup.
+I did this because there were total n-1 players and n mugs.
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+    int n,s;
+    cin>>n>>s;
+    int sum=0;
+    int max=INT_MIN;
+    for(int i=0;i<n;i++){
+        int a;
+        cin>>a;
+        if(a>max){
+            max=a;
+        }
+        sum+=a;
+    }
+    if(s>=sum-max){
+        cout<<"YES"<<endl;
+    }else{
+        cout<<"NO"<<endl;
+    }
+    return 0;
+}
