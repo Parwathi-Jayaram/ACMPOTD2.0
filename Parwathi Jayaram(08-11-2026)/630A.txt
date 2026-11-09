@@ -1,0 +1,10 @@
+In this question the output is always going to be 25.
+So I just returned 25 irrespective of input.
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+    int n;
+    cin>>n;
+    cout<<25<<endl;
+    return 0;
+}
