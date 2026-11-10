@@ -1,0 +1,10 @@
+So for this question I simply used the formula (n/k+1)*k to find the answer
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+    int n,k;
+    cin>>n>>k;
+    int ans=(n/k+1)*k;
+    cout<<ans<<endl;
+    return 0;
+}
