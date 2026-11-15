@@ -1,0 +1,25 @@
+So for this question I calculated thenumber of 'A's and 'D's then compared them.
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+    int n;
+    cin>>n;
+    string s;
+    cin>>s;
+    int a=0,b=0;
+    for(char c:s){
+        if(c=='A'){
+            a++;
+        }else{
+            b++;
+        }
+    }
+    if(a>b){
+        cout<<"Anton"<<endl;
+    }else if(a==b){
+        cout<<"Friendship"<<endl;
+    }else{
+        cout<<"Danik"<<endl;
+    }
+    return 0;
+}
