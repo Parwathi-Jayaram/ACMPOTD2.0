@@ -1,0 +1,30 @@
+So for this question I first sorted the vectors based off number of matches to maximize the output.
+Then I kept adding matches to the output till we reach the output.
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+    int n,m;
+    cin>>n>>m;
+    vector<pair<int,int>> vec;
+    for(int i=0;i<m;i++){
+        int a,b;
+        cin>>a>>b;
+        vec.push_back({a,b});        
+    }
+    sort(vec.begin(), vec.end(), [](auto &a, auto &b) {
+    if(a.second == b.second) {
+        return a.first > b.first;
+    }
+    return a.second > b.second;
+});
+    long long op=0,num=0;
+    for(int i = 0; i < m; i++) {
+    int take = min(n - num, vec[i].first);
+    num += take;
+    op += take * vec[i].second;
+
+    if(num == n) break;
+}
+    cout<<op<<endl;
+    return 0;
+}

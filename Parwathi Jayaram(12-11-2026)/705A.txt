@@ -1,0 +1,22 @@
+So for this question I iteratively keep adding I love and I hate to the output.
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+    int n;
+    cin>>n;
+    string op="";
+    for(int i=1;i<n+1;i++){
+        if(i%2!=0){
+            op+="I hate ";
+        }else if(i%2==0){
+            op+="I love ";
+        }
+        if(i==n){
+            break;
+        }
+        op+="that ";
+    }
+    op+="it";
+    cout<<op<<endl;
+    return 0;
+}
